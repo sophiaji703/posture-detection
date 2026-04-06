@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        
+        <style>
+            body {
+                background-image: linear-gradient(to right, #ADA996, #F2F2F2, #DBDBDB, #EAEAEA);
+            }
+            div {
+                background-color: rgb(33, 34, 34);
+                position: absolute;
+                width: 500px;
+                height: 340px;
+                left: 450px;
+                top: 90px;
+                border-radius: 20px;
+                --animate-duration: 1s;
+                z-index: 3;
+            }
+            #camera-off {
+                font-family: 'Zalando Sans Expanded';
+                font-size: 20px;
+                position: absolute;
+                left: 170px;
+                top: 150px;
+                z-index: 5;
+                
+            }
+           
+            button {
+                position: absolute;
+                width: 500px;
+                height: 50px;
+                left: 450px;
+                top: 485px;
+                border-radius: 10px;
+                background-color: rgb(33, 34, 34);
+                font-family: 'Zalando Sans Expanded';
+                font-size: 12px;
+                font-weight: bold;
+                --animate-duration: 1s;
+            }
+            
+          
+            video, canvas {
+                width: 500px;
+                height: 290px;
+                border-radius: 12px;
+                transform: scaleX(-1); /* mirror */
+                position: absolute;
+                left: 450px;
+                top: 120px;
+                z-index: 10;
+            }
+           
+           
+            h4 {
+                font-family: 'Zalando Sans Expanded';
+                font-size: 20px;
+                position: absolute;
+                left: 630px;
+                top: 10px;
+                background-image: linear-gradient(to bottom, rgb(29, 31, 31), rgb(109, 107, 107));
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+                -webkit-text-fill-color: transparent;
+                
+            }
+
+            
+
+        </style>
+    </head>
+    <body>
+        <div><Toaster/></div>
+        <div class="animate__animated animate__fadeIn" id="blackdiv">
+            <h2 id="camera-off" style="color: rgb(242, 243, 243)">Camera is off</h2>
+        
+        </div>
+        <button class="animate__animated animate__fadeIn" id="camera-request" style="color: rgb(242, 243, 243)">Start Tracking</button>
+        
+        <h4 id="status">Status:</h4>
+        <p></p>
+
+
+
+
+        <video id="camera" autoplay playsinline></video>
+        <canvas id="overlay"></canvas>
+        
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision/vision_bundle.mjs" crossorigin="anonymous"></script>
+        <script type="module" src="track.js"></script>
+
+    </body>
+</html>
